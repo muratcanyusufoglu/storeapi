@@ -2,21 +2,25 @@ import { StyleSheet } from "react-native";
 
 
 export default StyleSheet.create({
+
+    
     container:{
         
-        flexDirection:'row',
-        
-        backgroundColor:'#f3e7e4',
+        flexDirection:'row',        
+        backgroundColor:'#f8f9fa',
         margin:10,
         borderWidth:1,
-        borderColor:'#bdbdbd'
-        
+        borderColor:'#bdbdbd',
+        borderRadius:15,
+                
     },
     image:{
         width:110,
         height:110,
         backgroundColor:'white',
         resizeMode:'contain',
+        borderTopLeftRadius:15,
+        borderBottomLeftRadius:15,
     },
     title:{
         fontSize:17,
@@ -25,12 +29,14 @@ export default StyleSheet.create({
     },
     
     price:{
-        textAlign:'right'
+        textAlign:'right',
+        marginRight:4,
     },
+    
     textbar:{
     marginLeft:5,
     flex:1,
-    justifyContent:'space-between'
+    justifyContent:'space-between',
     
     },
 

@@ -1,12 +1,12 @@
 import React from 'react'
-import { View, Text, SafeAreaView, Image } from 'react-native'
+import { View, Text, TouchableWithoutFeedback, Image } from 'react-native'
 import styles from './card.style'
 
 
-const card =({prop})=>{
-
+const card =({prop,onpress})=>{
+    
     return(
-        <SafeAreaView>
+        <TouchableWithoutFeedback onPress={onpress}>
         <View style={styles.container}>
                 
             <Image style={styles.image} source={{uri:prop.image}}/>
@@ -15,7 +15,7 @@ const card =({prop})=>{
             <Text style={styles.price}>{prop.price}$</Text>
             </View>
         </View>
-        </SafeAreaView>
+        </TouchableWithoutFeedback>
 
     );
 }
