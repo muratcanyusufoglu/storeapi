@@ -8,12 +8,9 @@ function details ({route}){
     
    const {id}=route.params;
    
-   const {loading,data}=useFetch('https://5c8c-83-66-167-200.ngrok.io/Books/'+`${id}`);
+   const {loading,data}=useFetch('http://6f0e-83-66-167-200.ngrok.io/Books/'+`${id}`);
 
-   const getscroll=()=>{
-       console.log('asd')
-   }
-    
+   
    if(loading)
    {return <Loading />}
    
@@ -26,14 +23,14 @@ function details ({route}){
         showsHorizontalScrollIndicator       
         pagingEnabled
         horizontal
-        onScrollEndDrag={getscroll}
+        
         >        
         <Image style={styles.image} source={{uri:data.image}}/>
         <Image style={styles.image} source={{uri:data.image1}}/>
 
         </ScrollView>
         <View style={styles.point}>
-        <Text style={styles.point}>-</Text>
+        <Text style={styles.point}>← →</Text>
         </View>
         <View style={styles.container}>
             

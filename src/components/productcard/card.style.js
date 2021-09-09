@@ -28,16 +28,34 @@ export default StyleSheet.create({
         textAlign:'auto',
     },
     
-    price:{
-        textAlign:'right',
-        marginRight:4,
-    },
+    
     
     textbar:{
     marginLeft:5,
-    flex:1,
+    flex:2,
     justifyContent:'space-between',
     
+    
     },
+
+    bottom: {
+        flexDirection:'row',
+        justifyContent:'space-between'        
+        
+    },
+
+    price:{
+        textAlign:'right',
+        marginRight:4,
+           
+       
+    },
+
+    category:{
+        textAlign:'left',     
+        
+        
+        
+    }
 
 })

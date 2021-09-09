@@ -1,11 +1,42 @@
 import React from 'react';
-import {Text,View,} from 'react-native';
+import {ScrollView,View,Button} from 'react-native';
+import styles from './categories.style';
 
+const section=({searchcategory})=>{
 
-const section=()=>{
+    return(        
+    <View style={styles.button}>
+        <ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        >
 
-    return(<View>
-        <Text>asdasdasd</Text>
+        <Button
+        color="#4d9078"
+        title="All"
+        onPress={()=>{searchcategory("")}}
+        />
+
+        <Button
+        color="#4d9078"
+        title="Clothes"
+        onPress={()=>{searchcategory("men's clothing")}}
+        />
+
+        <Button
+        color="#4d9078"
+        title="Electronics"
+        onPress={()=>{searchcategory("electronics")}}
+        />
+
+        <Button
+        color="#4d9078"
+        title="Jewelry"
+        onPress={()=>{searchcategory("jewelery")}}
+        />
+
+        </ScrollView>
+        
         </View>
     )
 }

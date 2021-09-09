@@ -20,13 +20,9 @@ function App() {
         options={{
         title:'Welcome',
         headerTintColor:'#bdbdbd',
-        headerStyle: {
-         
-          
-          
-        },
         
-        
+       
+       
         
         
         }}

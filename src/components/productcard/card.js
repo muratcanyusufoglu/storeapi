@@ -10,9 +10,15 @@ const card =({prop,onpress})=>{
         <View style={styles.container}>
                 
             <Image style={styles.image} source={{uri:prop.image}}/>
+            
             <View style={styles.textbar}>
-            <Text style={styles.title}>{prop.title}</Text>            
+            <Text style={styles.title}>{prop.title}</Text>
+            
+            <View style={styles.bottom}>                        
+            <Text style={styles.category}>{prop.category}</Text>
             <Text style={styles.price}>{prop.price}$</Text>
+            </View>
+            
             </View>
         </View>
         </TouchableWithoutFeedback>

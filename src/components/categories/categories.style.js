@@ -35,6 +35,18 @@ export default StyleSheet.create({
     container:{
         margin:5,
         padding:8,
+    },
+
+    button:{
+        flexDirection:'row',
+        justifyContent:'center',
+        backgroundColor:'#f8f9fa',
+        paddingVertical:-1,
+        marginHorizontal:8,
+        borderWidth:1,
+        borderRadius:15,
+        borderColor:'#bdbdbd',
+        marginTop:4,
     }
 
 })

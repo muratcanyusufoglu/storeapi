@@ -38,19 +38,17 @@ export default StyleSheet.create({
     bottom:{
         marginTop:35,
         flexDirection:'row-reverse',
-        
+        justifyContent:'space-between',        
         fontSize:15,
-        marginBottom:20,
-        
+        marginBottom:20,       
                
-        
     },
+    
     raiting:{
         borderWidth:1,
         borderTopRightRadius:25,
         borderBottomRightRadius:25,
-        borderColor:'transparent',
-        marginRight:155,
+        borderColor:'transparent',        
         padding:8,
         backgroundColor:'#83c5be',
         
