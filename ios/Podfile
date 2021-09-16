@@ -21,4 +21,6 @@ target 'storeapi' do
   #     flipper_post_install(installer)
   #   end
   # end
+  pod 'react-native-config', :path => '../node_modules/react-native-config'
+
 end

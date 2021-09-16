@@ -9,7 +9,7 @@ const card =({prop,onpress})=>{
         <TouchableWithoutFeedback onPress={onpress}>
         <View style={styles.container}>
                 
-            <Image style={styles.image} source={{uri:prop.image}}/>
+            <Image style={styles.image} source={{uri:prop.imageurl}}/>
             
             <View style={styles.textbar}>
             <Text style={styles.title}>{prop.title}</Text>

@@ -5,6 +5,21 @@ const border=Dimensions.get('window');
 
 export default StyleSheet.create({
 
+    header:{
+        flexDirection:'row',
+        alignItems:'center',
+        borderWidth:1,
+        borderRadius:7,
+        marginRight:260,
+        backgroundColor:'#f8f9fa'      
+    },
+
+    backhometext:{
+        
+        fontSize:15,
+        fontWeight:'bold'
+    },
+
     body:{
         backgroundColor:'#f8f9fa',
         flex:1,
@@ -33,6 +48,7 @@ export default StyleSheet.create({
         textAlign:'justify',
         marginBottom:5,
         
+        
     },
     
     bottom:{
@@ -40,7 +56,7 @@ export default StyleSheet.create({
         flexDirection:'row-reverse',
         justifyContent:'space-between',        
         fontSize:15,
-        marginBottom:20,       
+               
                
     },
     
@@ -66,7 +82,7 @@ export default StyleSheet.create({
     },
 
     about:{
-        marginTop:20,
+        marginTop:30,
         fontWeight:'bold',
         fontSize:20,
     },
@@ -74,8 +90,63 @@ export default StyleSheet.create({
     point:{
         
         alignItems:'center',
+        
 
     },
+
+    comment:{
+        marginTop:30,
+        fontWeight:'bold',
+        fontSize:20,
+
+    },  
+
+    review:{       
+        
+        justifyContent:'center',
+        
+        
+    },
+
+    input:{
+        borderWidth:1,
+        padding:10,
+        marginVertical:10,
+        borderRadius:10,
+        paddingVertical:30,
+        borderColor:'#bfbdc1',        
+    },
+
+    commentbar:{
+        marginBottom:0,
+    },
+
+    pointtext:{
+
+        fontSize:20,
+        color:'#f1ba0a'
+    },
+
+    mailinput:{
+        borderWidth:1,
+        padding:10,
+        borderRadius:10,
+        borderColor:'#bfbdc1'
+    },
+    
+    sendbutton:{
+        paddingHorizontal:15,
+        marginTop:5,
+        marginHorizontal:140,
+        marginBottom:20,
+        alignItems:'center',
+        borderWidth:1,        
+        borderRadius:50,
+        borderColor:'transparent',
+        backgroundColor:'#b0d0d3'
+
+        
+    },  
     
    
 })

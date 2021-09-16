@@ -3,17 +3,20 @@ import { View, FlatList,StyleSheet,Text, Button } from 'react-native';
 import Lottie from '../../components/loading';
 import Categories from '../../components/categories';
 import Section from '../../components/categories/section';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
+
 
 
 import Card from '../../components/productcard';
 import useFetch from '../../hooks/useFetch';
-import { backgroundColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
+
 
 
 const products=({navigation})=>{
     
       
-    const {loading,data}=useFetch('http://6f0e-83-66-167-200.ngrok.io/Books');
+    const {loading,data}=useFetch('http://7631-83-66-167-200.ngrok.io/Stores');
 
     const [list,setlist]=useState(data)
 
@@ -30,6 +33,7 @@ const products=({navigation})=>{
             );
             setlist(filterlist)        
     }
+    
 
     const searchcategory=text=>{
 
@@ -50,7 +54,6 @@ const products=({navigation})=>{
 
     }
 
-
     const getcomponent=({item})=>
     
     <Card prop={item} onpress={()=>handleropacity(item.id)}
@@ -62,16 +65,27 @@ const products=({navigation})=>{
 
 
     return(
-        <View style={styles.body}>    
+        <View style={styles.body}>
+        
+        <View style={styles.header}>
+        <Text style={styles.title}>Welcome</Text>
+        <Icon
+            name='cart'
+            size={42}
+            color='#4d9078'
+            />
                 
-               
+        </View>
+        <Text style={styles.title2}>Holyum Shop</Text>  
+           
         <View>
-            <Categories onSearch={searchitem}/>
-          </View>
+        <Categories onSearch={searchitem}/>
+        </View>
 
         <Section searchcategory={searchcategory}/>
 
-        <FlatList 
+        <FlatList
+        keyExtractor={(item) => item.id} 
         data={list}
         renderItem={getcomponent}
         />
@@ -85,6 +99,29 @@ const products=({navigation})=>{
 export default products;
 
 const styles=StyleSheet.create({
+
+    title:{
+        fontSize:25,
+        fontWeight:'bold',
+    },
+
+    title2:{
+        marginLeft:10,
+        marginBottom:15,
+        fontSize:30,
+        color:'#4d9078',
+        fontWeight:'bold'
+    },
+
+    header:{
+        flexDirection:'row',
+        padding:10,
+        marginTop:20,
+        justifyContent:'space-between',
+        alignItems:'center',
+        
+    },
+
     body:{
         flex:1,
         backgroundColor:'#C8D9E4',},

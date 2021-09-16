@@ -28,7 +28,7 @@ export default StyleSheet.create({
         borderColor:'#bdbdbd',
         borderRadius:5,
         flexDirection:'row',
-        backgroundColor:'#f8f9fa'
+        backgroundColor:'#F5F5F7'
         
     },
 
@@ -47,6 +47,7 @@ export default StyleSheet.create({
         borderRadius:15,
         borderColor:'#bdbdbd',
         marginTop:4,
-    }
+        justifyContent:'space-between',
 
-})
+    },
+});

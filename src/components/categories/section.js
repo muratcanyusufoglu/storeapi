@@ -8,6 +8,7 @@ const section=({searchcategory})=>{
     <View style={styles.button}>
         <ScrollView
         horizontal
+        
         showsHorizontalScrollIndicator={false}
         >
 
@@ -15,13 +16,7 @@ const section=({searchcategory})=>{
         color="#4d9078"
         title="All"
         onPress={()=>{searchcategory("")}}
-        />
-
-        <Button
-        color="#4d9078"
-        title="Clothes"
-        onPress={()=>{searchcategory("men's clothing")}}
-        />
+        />        
 
         <Button
         color="#4d9078"
@@ -34,6 +29,19 @@ const section=({searchcategory})=>{
         title="Jewelry"
         onPress={()=>{searchcategory("jewelery")}}
         />
+
+        <Button
+        color="#4d9078"
+        title="Women's Clothing"
+        onPress={()=>{searchcategory("womens clothing")}}
+        />
+
+        <Button
+        color="#4d9078"
+        title="Men's Clothing"
+        onPress={()=>{searchcategory("mens clothing")}}
+        />
+
 
         </ScrollView>
         
