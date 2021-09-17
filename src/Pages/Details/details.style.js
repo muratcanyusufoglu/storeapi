@@ -6,6 +6,7 @@ const border=Dimensions.get('window');
 export default StyleSheet.create({
 
     header:{
+        marginTop:20,
         flexDirection:'row',
         alignItems:'center',
         borderWidth:1,

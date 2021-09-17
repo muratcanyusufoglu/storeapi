@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
-import { Text, View,TextInput, Button,Alert} from 'react-native';
+import React, {useState,useEffect} from 'react';
+import { Text, View,TextInput, Button,Alert, Image} from 'react-native';
 import styles from './ReviewCard.style';
 import { AirbnbRating } from 'react-native-ratings';
 import axios from 'axios';
+import * as ImagePicker from 'expo-image-picker';
 
 
 
@@ -10,13 +11,17 @@ import axios from 'axios';
 
 const reviewcard=(id)=>{
 
-    const[comment,setcommet]=useState({
+    const[comment,setcomment]=useState({
         productid: id.id,
         point:0,
         comment:'',
         email:'',
+        imageuri:'',
+              
 
     })
+
+    const [image, setImage] = useState(null);
 
 
     const ratingCompleted=(rating)=> {
@@ -32,21 +37,50 @@ const reviewcard=(id)=>{
     const emailinput=(text)=>{
         comment.email=text
     }
+
+    useEffect(() => {
+        (async () => {
+          if (Platform.OS !== 'web') {
+            const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+            if (status !== 'granted') {
+              alert('Sorry, we need camera roll permissions to make this work!');
+            }
+          }
+        })();
+      }, []);
+
+    const pickImage = async () => {
+        let result = await ImagePicker.launchImageLibraryAsync({
+          mediaTypes: ImagePicker.MediaTypeOptions.All,
+          allowsEditing: true,
+          aspect: [4, 3],
+          quality: 1,
+        });
+    
+        if (!result.cancelled) {
+          setImage(result.uri);
+        }
+        
+        comment.imageuri=result.uri;
+
+       
+      };
     
     const postaxios=()=>{
         
         if((comment.comment&&comment.email)==''||comment.point==0.0)
         {
             Alert.alert('Inputs can not be empty!');
-
         }
-
 
         else{
         axios.post(
         'http://7631-83-66-167-200.ngrok.io/Comments', 
-        comment);
-        }        
+        comment);        
+
+        Alert.alert('Commend Sended')    
+        }
+                
         }
 
         return(    
@@ -84,9 +118,23 @@ const reviewcard=(id)=>{
         style={styles.mailinput}
         placeholder='Write  your email:'
         onChangeText={(text)=>emailinput(text)}
-        />        
+           /> 
+
+      
+             
 
         </View>
+
+      <View style={styles.addimagebutton}>
+      <Button 
+      title="Add a Photo" 
+      onPress={pickImage} 
+      color='#ffffff'
+      />
+      </View>
+      {image && <Image source={{ uri: image }} style={{ width: 100, height: 100 }} />}
+      
+        
         
 
         <View style={styles.sendbutton}>

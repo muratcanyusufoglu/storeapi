@@ -40,7 +40,13 @@ export default StyleSheet.create({
 
     rating:{
         flex:3,
+    },
+
+    image:{
+        marginTop:15,
+        marginLeft:15,
+        height:50,
+        width:50
     }
-    ,
 
 })

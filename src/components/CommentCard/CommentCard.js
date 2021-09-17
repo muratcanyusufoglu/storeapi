@@ -1,5 +1,5 @@
 import React from 'react'
-import {View,Text,} from 'react-native'
+import {View,Text,Image} from 'react-native'
 import { AirbnbRating } from 'react-native-ratings';
 import styles from './CommentCard.style';
 
@@ -8,6 +8,10 @@ const CommentCard =({prop})=>{
     return(
         <View style={styles.body}>
         <Text style={styles.emailfont}>{prop.email}</Text>
+        <Image
+        source={{uri:prop.imageuri}}
+        style={styles.image}
+        />
            
         <View style={styles.commentbar}>
         
@@ -24,6 +28,9 @@ const CommentCard =({prop})=>{
         
         />
         </View>
+        
+        
+
         </View>
 
         

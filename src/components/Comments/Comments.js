@@ -22,7 +22,7 @@ const comments=(id)=>{
     {
     return (
         <View>
-            <Text>No Comment</Text>
+            <Text>No Comments Yet</Text>
         </View>        
     )
     }

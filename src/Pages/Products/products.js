@@ -77,12 +77,14 @@ const products=({navigation})=>{
                 
         </View>
         <Text style={styles.title2}>Holyum Shop</Text>  
-           
-        <View>
-        <Categories onSearch={searchitem}/>
-        </View>
+        
 
         <Section searchcategory={searchcategory}/>
+        
+        <Categories onSearch={searchitem}/>
+        
+
+        
 
         <FlatList
         keyExtractor={(item) => item.id} 

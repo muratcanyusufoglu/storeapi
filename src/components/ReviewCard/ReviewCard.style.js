@@ -59,7 +59,21 @@ export default StyleSheet.create({
         backgroundColor:'#b0d0d3'
 
         
-    },  
+    },
+    
+    addimagebutton:{
+        marginRight:237,
+        marginTop:10,        
+        marginBottom:20,
+        alignItems:'center',
+        borderWidth:1,        
+        borderRadius:50,
+        borderColor:'transparent',
+        backgroundColor:'#b0d0d3', 
+        flexDirection:'row',
+        flex: 1, 
+        alignItems: 'center', 
+        justifyContent: 'space-between' },
     
    
 })
