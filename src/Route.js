@@ -19,9 +19,7 @@ function App() {
         name="ProductsPage" 
         component={Products}
         options={{
-          headerShown:false, 
-             
-        
+          headerShown:false,      
         
         }}
         />

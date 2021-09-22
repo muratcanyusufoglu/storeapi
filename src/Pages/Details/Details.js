@@ -18,7 +18,7 @@ function details ({route,navigation}){
 
 
       
-   const {loading,data}=useFetch('http://7631-83-66-167-200.ngrok.io/Stores/'+`${id}`);
+   const {loading,data}=useFetch('http://fca4-83-66-167-200.ngrok.io/Stores/'+`${id}`);
   
 
    if(loading)

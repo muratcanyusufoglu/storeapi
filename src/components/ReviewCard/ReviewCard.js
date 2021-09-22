@@ -75,7 +75,7 @@ const reviewcard=(id)=>{
 
         else{
         axios.post(
-        'http://7631-83-66-167-200.ngrok.io/Comments', 
+        'http://fca4-83-66-167-200.ngrok.io/Comments', 
         comment);        
 
         Alert.alert('Commend Sended')    

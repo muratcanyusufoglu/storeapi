@@ -16,9 +16,11 @@ import useFetch from '../../hooks/useFetch';
 const products=({navigation})=>{
     
       
-    const {loading,data}=useFetch('http://7631-83-66-167-200.ngrok.io/Stores');
-
+    const {loading,data}=useFetch('http://fca4-83-66-167-200.ngrok.io/Stores');
+   
     const [list,setlist]=useState(data)
+
+    const [visible,setvisible]=useState(false);  
 
 
     const searchitem=text=>{
@@ -33,8 +35,9 @@ const products=({navigation})=>{
             );
             setlist(filterlist)        
     }
-    
 
+
+    
     const searchcategory=text=>{
 
         const filterlist=data.filter(item=>{
@@ -47,6 +50,61 @@ const products=({navigation})=>{
             );
             setlist(filterlist)        
     }
+
+    const priceTop=()=>{
+        
+        const filterlist=data.sort(
+        function(a, b) {  
+            return b.price-a.price;                
+        });
+        
+        setlist(filterlist)
+        
+    }
+    
+    const priceDown=()=>{
+        
+        const filterlist=data.sort(
+        function(a, b) {  
+            return a.price-b.price;                
+        });
+        
+        setlist(filterlist)
+        
+    }
+
+    const atoz=()=>{
+        
+        const filterlist=data.sort(
+        function(a, b) {  
+            return a.title>b.title;                
+        });
+        
+        setlist(filterlist)
+        
+    }
+
+    const ztoa=()=>{
+        
+        const filterlist=data.sort(
+        function(a, b) {  
+            return a.title<b.title;                
+        });
+        
+        setlist(filterlist)
+        
+    }
+    
+
+    const getlist=()=>{
+    
+        if(visible==false)
+        {setvisible(true)}
+        else{
+            setvisible(false)
+        }
+            
+    }   
 
    
     const handleropacity= id =>{
@@ -75,24 +133,27 @@ const products=({navigation})=>{
             color='#4d9078'
             />
                 
-        </View>
-        <Text style={styles.title2}>Holyum Shop</Text>  
+        </View>        
+        <Text style={styles.title2}>BlaBla Shop</Text>  
         
 
         <Section searchcategory={searchcategory}/>
         
-        <Categories onSearch={searchitem}/>
-        
+        <Categories onSearch={searchitem} getfilterlist={getlist}/>
 
+        {visible ?(
+        <View style={styles.sections}> 
+        <Text style={styles.filter} onPress={atoz}>A-Z</Text>
+        <Text style={styles.filter} onPress={ztoa}>Z-A</Text>
+        <Text style={styles.filter} onPress={priceTop}>Price Top</Text>
+        <Text style={styles.filter} onPress={priceDown}>Price Down</Text>
+        </View>) : null}             
         
-
         <FlatList
         keyExtractor={(item) => item.id} 
         data={list}
         renderItem={getcomponent}
-        />
-
-        
+        />       
                 
         </View>
     )
@@ -127,6 +188,7 @@ const styles=StyleSheet.create({
     body:{
         flex:1,
         backgroundColor:'#C8D9E4',},
+
     button:{
         flexDirection:'row',
         justifyContent:'space-between',
@@ -134,5 +196,24 @@ const styles=StyleSheet.create({
         margin:7,
         borderWidth:1,
         borderRadius:25,
+    },
+
+    sections:{
+        flexDirection:'row',
+        marginHorizontal:13,
+        borderWidth:1,
+        borderRadius:8,
+        backgroundColor:'#f8f9fa',
+        borderColor:'#bdbdbd',
+        justifyContent:'space-evenly',    
+
+    },
+
+    filter:{
+        color:"#4d9078",
+        fontSize:16,
+        
     }
+
+
     })

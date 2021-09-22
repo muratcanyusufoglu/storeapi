@@ -30,6 +30,7 @@ const categories =props=>{
             color='#003049'
             name='sort'
             size={26}
+            onPress={props.getfilterlist}
             
             />
             

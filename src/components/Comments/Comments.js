@@ -7,7 +7,7 @@ import CommentCard from '../CommentCard';
 
 const comments=(id)=>{
 
-    const {data}=useFetch('http://7631-83-66-167-200.ngrok.io/Comments');
+    const {data}=useFetch('http://fca4-83-66-167-200.ngrok.io/Comments');
 
     
     const filtercomments=data.filter(x=>{return x.productid==id.id})
